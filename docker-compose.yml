@@ -1,0 +1,16 @@
+version: '3.7'
+services:
+  es:
+    image: eu.gcr.io/dhh-search-discovery-ops/elasticsearch:7.3.2
+    ports:
+      - "9200:9200"
+    environment:
+      discovery.type: single-node
+      xpack.ml.enabled: "false"  # Disable machine learning features
+    command: >
+      /bin/sh -c "./bin/elasticsearch-plugin list | grep -q analysis-icu
+      || ./bin/elasticsearch-plugin list | grep -q analysis-smartcn
+      || ./bin/elasticsearch-plugin install analysis-icu
+      && ./bin/elasticsearch-plugin install analysis-smartcn;
+      /usr/local/bin/docker-entrypoint.sh"
+    restart: always
