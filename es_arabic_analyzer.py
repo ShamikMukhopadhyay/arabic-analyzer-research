@@ -23,4 +23,4 @@ df = pd.DataFrame({
     'Original Query': queries,
     'Analyzed Query': results
 })
-df.to_csv('analyzed_queries.csv', index=False, encoding='utf-8-sig')
+df.to_csv('analyzed_queries_es_analyzer.csv', index=False, encoding='utf-8-sig')
