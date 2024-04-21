@@ -19,3 +19,7 @@ docker-compose up
 
 # 4. Running the Code
 python main.py
+
+# 5. Before Running Spacy download the model
+python -m spacy download xx_ent_wiki_sm
+

@@ -1,3 +1,7 @@
 elasticsearch==7.15.2
 pandas
-camel-tools
+ArabicNLP
+nltk
+spacy
+transformers
+tf-keras
